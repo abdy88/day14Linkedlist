@@ -77,6 +77,93 @@ public class LinkedListOperations
 			}
 
 	}
+	
+	public void removeFirst()
+	{
+		if(head ==null)
+			System.out.println("list empty");
+		else
+		{
+			Node temp=head;
+			head=head.next;
+			temp.next=null;
+			temp=null;
+			
+			
+		}
+
+	}
+
+	public void removeLast()
+	{
+		if(head==null)
+			System.out.println("list empty");
+		else {
+			
+			Node temp = head;
+			Node prev = null;
+			while(temp.next!=null)
+			{
+				prev=temp;
+				temp=temp.next;
+					
+			}
+				prev.next=null;
+				temp=null;
+		
+		}
+
+	}
+
+
+
+	public void removeNthPosn(int pos)
+	{
+		
+
+		if (head==null)
+		{System.out.println("List empty!!");}
+		else if( pos<=0 ||pos>count  )
+		{
+			System.out.println("Invalid posn");
+			
+		}
+			else if(pos==1)
+			{	removeFirst();
+			
+			}
+		
+			else
+			{
+				Node temp = head;
+				Node prev=null;
+				for(int i=0;i<pos;i++)
+				{
+					
+					prev=temp;
+					temp=temp.next;
+					
+					
+				}
+				
+				
+				prev.next=temp.next;
+				temp.next=null;
+				temp=null;
+				
+				
+				
+			}
+
+
+
+	}
+
+
+
+
+
+
 
 	public void display() {
 
