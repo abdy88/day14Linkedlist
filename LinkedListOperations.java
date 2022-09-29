@@ -40,6 +40,43 @@ public class LinkedListOperations
 		count++;
 
 	}
+	
+	public void insertNthpos(int data,int pos)
+	{
+		
+		Node newNode = new Node(data);
+		
+		if (head==null)
+		{System.out.println("List empty!!");}
+		else if( pos<=0 ||pos>count  )
+		{
+			System.out.println("Invalid posn");
+			
+		}
+			else if(pos==1)
+			{	insertFirst(data);
+			
+			}
+		
+			else
+			{
+				Node temp = head;
+				for(int i=1;i<pos-1;i++)
+				{
+					temp=temp.next;
+					
+					
+				}
+				
+				
+				newNode.next=temp.next;
+				temp.next=newNode;
+				
+				
+				
+			}
+
+	}
 
 	public void display() {
 
