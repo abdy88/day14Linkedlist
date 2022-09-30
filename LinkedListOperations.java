@@ -40,130 +40,120 @@ public class LinkedListOperations
 		count++;
 
 	}
-	
-	public void insertNthpos(int data,int pos)
-	{
-		
+
+	public void insertNthpos(int data, int pos) {
+
 		Node newNode = new Node(data);
-		
-		if (head==null)
-		{System.out.println("List empty!!");}
-		else if( pos<=0 ||pos>count  )
-		{
+
+		if (head == null) {
+			System.out.println("List empty!!");
+		} else if (pos <= 0 || pos > count) {
 			System.out.println("Invalid posn");
-			
+
+		} else if (pos == 1) {
+			insertFirst(data);
+
 		}
-			else if(pos==1)
-			{	insertFirst(data);
-			
-			}
-		
-			else
-			{
-				Node temp = head;
-				for(int i=1;i<pos-1;i++)
-				{
-					temp=temp.next;
-					
-					
-				}
-				
-				
-				newNode.next=temp.next;
-				temp.next=newNode;
-				
-				
-				
+
+		else {
+			Node temp = head;
+			for (int i = 1; i < pos - 1; i++) {
+				temp = temp.next;
+
 			}
 
-	}
-	
-	public void removeFirst()
-	{
-		if(head ==null)
-			System.out.println("list empty");
-		else
-		{
-			Node temp=head;
-			head=head.next;
-			temp.next=null;
-			temp=null;
-			
-			
+			newNode.next = temp.next;
+			temp.next = newNode;
+
 		}
+		count++;
 
 	}
 
-	public void removeLast()
-	{
-		if(head==null)
+	public void removeFirst() {
+		if (head == null)
 			System.out.println("list empty");
 		else {
-			
+			Node temp = head;
+			head = head.next;
+			temp.next = null;
+			temp = null;
+
+		}
+		count--;
+	}
+
+	public void removeLast() {
+		if (head == null)
+			System.out.println("list empty");
+		else {
+
 			Node temp = head;
 			Node prev = null;
-			while(temp.next!=null)
-			{
-				prev=temp;
-				temp=temp.next;
-					
-			}
-				prev.next=null;
-				temp=null;
-		
-		}
+			while (temp.next != null) {
+				prev = temp;
+				temp = temp.next;
 
+			}
+			prev.next = null;
+			temp = null;
+
+		}
+		count--;
 	}
 
+	public void removeNthPosn(int pos) {
 
-
-	public void removeNthPosn(int pos)
-	{
-		
-
-		if (head==null)
-		{System.out.println("List empty!!");}
-		else if( pos<=0 ||pos>count  )
-		{
+		if (head == null) {
+			System.out.println("List empty!!");
+		} else if (pos <= 0 || pos > count) {
 			System.out.println("Invalid posn");
-			
+
+		} else if (pos == 1) {
+			removeFirst();
+
 		}
-			else if(pos==1)
-			{	removeFirst();
-			
-			}
-		
-			else
-			{
-				Node temp = head;
-				Node prev=null;
-				for(int i=0;i<pos;i++)
-				{
-					
-					prev=temp;
-					temp=temp.next;
-					
-					
-				}
-				
-				
-				prev.next=temp.next;
-				temp.next=null;
-				temp=null;
-				
-				
-				
+
+		else {
+			Node temp = head;
+			Node prev = null;
+			for (int i = 0; i < pos; i++) {
+
+				prev = temp;
+				temp = temp.next;
+
 			}
 
+			prev.next = temp.next;
+			temp.next = null;
+			temp = null;
 
+		}
+		count--;
 
 	}
 
+	public void findNode(int data1) {
 
+		if (head == null)
+			System.out.println("List empty!!");
 
+		else {
+			Node temp = head;
+			while (temp.next != null) {
+				if (temp.data == data1) {
+					System.out.println(temp.data + "present");
 
+				}
+				temp = temp.next;
+				if (temp.data == data1) {
+					System.out.println(temp.data + "present");
+				}
+			}
 
+		}
 
+	}
 
 	public void display() {
 
@@ -177,7 +167,7 @@ public class LinkedListOperations
 				temp = temp.next;
 			}
 
-			System.out.println(temp.data);
+//			System.out.println(temp.data);
 //			System.out.println(temp.next);
 
 		}

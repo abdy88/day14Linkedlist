@@ -8,9 +8,9 @@ public class LinkedListMenu {
 		list.insertFirst(56);
 		list.insertLast(30);
 		list.insertLast(70);
-		list.removeLast();
-		list.display();
+		list.findNode(30);
 		
+
 	}
 
 }
