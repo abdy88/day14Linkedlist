@@ -157,7 +157,7 @@ public class LinkedListOperations
 
 	int findNodeWithIndex(int data1) {
 		int flag = 0;
-		int position=0;
+		int position = 0;
 		if (head == null)
 			System.out.println("List empty!!");
 
@@ -168,13 +168,12 @@ public class LinkedListOperations
 				if (temp.data == data1) {
 					System.out.println(temp.data + "present at position" + i);
 					flag = 1;
-					position=i;
+					position = i;
 				}
 				temp = temp.next;
-				
+
 			}
-			
-			
+
 			if (flag == 0) {
 				System.out.println("not present");
 
